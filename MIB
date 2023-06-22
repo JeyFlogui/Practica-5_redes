@@ -1,0 +1,28 @@
+MY-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    MODULE-IDENTITY, OBJECT-TYPE, Integer32
+        FROM SNMPv2-SMI;
+
+myMIB MODULE-IDENTITY
+    LAST-UPDATED "202306210000Z"
+    ORGANIZATION "Mi Organización"
+    CONTACT-INFO
+        "Correo electrónico: info@miorganizacion.com"
+    DESCRIPTION
+        "Mi MIB personalizada."
+    REVISION "202306210000Z"
+    DESCRIPTION
+        "Primera revisión."
+    ::= { iso(1) identified-organization(3) myOrg(12345) 1 }
+
+myObject OBJECT-TYPE
+    SYNTAX Integer32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION
+        "Mi objeto gestionado."
+    ::= { myMIB 1 }
+
+END
+
